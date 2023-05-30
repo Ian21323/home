@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 25px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Barra de navegação */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #191919;
+  padding: 20px 50px;
+}
+
+.logo a {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  text-decoration: underline;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  background-color: #ffffff;
+  color: #191919;
+}
+
+/* Conteúdo */
+.anotacoes {
+    margin-top: 50px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .lista-anotacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .anotacao {
+    background-color: #191919;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .anotacao p {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .btn-visualizar,
+  .btn-excluir {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .btn-visualizar {
+    background-color: #007bff;
+  }
+  
+  .btn-excluir {
+    background-color: #dc3545;
+  }
+  
+  .btn-visualizar:hover,
+  .btn-excluir:hover {
+    opacity: 0.8;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      width: 60%;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    body {
+      padding: 15px;
+    }
+  
+    .nav-links {
+      width: 100%;
+    }
+  
+    .nav-links li a {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  
+    .lista-anotacoes {
+      grid-template-columns: 1fr;
+    }
+  }
