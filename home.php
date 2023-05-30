@@ -75,9 +75,8 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
       <button class="btn-login" type="submit">Salvar Anotação</button>
     </form>
     <div class="anotacoes">
-      <?php foreach($anotacoes as $anotacao): ?>
-        <p><?php echo $anotacao['anotacao']; ?></p>
-      <?php endforeach; ?>
+
+      
     </div>
   </section>
 </body>

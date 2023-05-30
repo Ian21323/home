@@ -57,22 +57,17 @@ $conn->close();
     <h2>Anotações</h2>
     <div class="lista-anotacoes">
       <?php foreach($anotacoes as $anotacao): 
-        $anotacoes = "anotacao";
-        $anotacoes = explode(",", $anoacao);
-        
-        foreach ($array as $valor) {
-            // faça algo com cada valor
-        }
-        
-        
         ?>
         <div class="anotacao">
-          <p><?php echo $anotacao['anotacao']; ?></p>
+          <p><?php echo $anotacao['grenciamento']; ?></p>
           <div class="botoes">
             <button class="btn-visualizar">Visualizar</button>
             <form action="" method="POST" class="form-excluir">
               <input type="hidden" name="anotacao_id" value="<?php echo $anotacao['id']; ?>">
               <button class="btn-excluir" type="submit">Excluir</button>
+                <?php 
+                  myslq 
+                ?>
             </form>
           </div>
         </div>
