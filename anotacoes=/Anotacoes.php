@@ -12,8 +12,23 @@ if ($conn->connect_error) {
     die("Falha na conexão com o banco de dados: " . $conn->connect_error);
 }
 
+// Verificar se o formulário de exclusão foi enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['anotacao_id'])) {
+        $anotacaoId = $_POST['anotacao_id'];
+
+        // Executar a consulta de exclusão no banco de dados
+        $sql = "DELETE FROM Anotacoes WHERE id = $anotacaoId";
+        $conn->query($sql);
+
+        // Redirecionar para a página atual para atualizar a lista de anotações
+        header("Location: $_SERVER[PHP_SELF]");
+        exit();
+    }
+}
+
 // Consulta as anotações
-$sql = "SELECT id, grenciamento FROM anotacoes";
+$sql = "SELECT id, grenciamento FROM Anotacoes";
 $result = $conn->query($sql);
 
 // Verificar se há resultados e armazenar em um array
@@ -27,7 +42,6 @@ if ($result->num_rows > 0) {
 // Fechar conexão com o banco de dados
 $conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,10 +59,10 @@ $conn->close();
       <a href="home.html">Home</a>
     </div>
     <ul class="nav-links">
-      <li><a href="../Login/login.php">Login</a></li>
+    <li><a href="../Login/login.php">Login</a></li>
       <li><a href="../home.php">Home</a></li>
       <li><a href="../feedback/feedback.php">Feedback</a></li>
-      <li><a href="../login/Anotacoes.php">Anotacoes</a></li>
+      <li><a href="../anotacoes=/Anotacoes.php">Anotacoes</a></li>
     </ul>
   </nav>
 
@@ -63,10 +77,11 @@ $conn->close();
           <div class="botoes">
             <button class="btn-visualizar">Visualizar</button>
             <form action="" method="POST" class="form-excluir">
-              <input type="hidden" name="anotacao_id" value="<?php echo $anotacao['id']; ?>">
+            <input type="hidden" name="anotacao_id" value="<?php echo $anotacao['id'] ?>">
               <button class="btn-excluir" type="submit">Excluir</button>
+
                 <?php 
-                  myslq 
+                
                 ?>
             </form>
           </div>
