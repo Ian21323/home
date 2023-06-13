@@ -39,6 +39,7 @@ if ($result->num_rows > 0) {
     }
 }
 
+
 // Fechar conexão com o banco de dados
 $conn->close();
 ?>
@@ -48,7 +49,7 @@ $conn->close();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualizar Anotações - Dark Mode</title>
+  <title>Diario Digital</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
 </head>
@@ -75,7 +76,7 @@ $conn->close();
         <div class="anotacao">
           <p><?php echo $anotacao['grenciamento']; ?></p>
           <div class="botoes">
-            <button class="btn-visualizar">Visualizar</button>
+            
             <form action="" method="POST" class="form-excluir">
             <input type="hidden" name="anotacao_id" value="<?php echo $anotacao['id'] ?>">
               <button class="btn-excluir" type="submit">Excluir</button>

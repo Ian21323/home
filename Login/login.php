@@ -62,9 +62,10 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
       <a href="login.html">Login</a>
     </div>
     <ul class="nav-links">
-      <li><a href="../Login/login.php">Login</a></li>
+    <li><a href="../Login/login.php">Login</a></li>
       <li><a href="../home.php">Home</a></li>
       <li><a href="../feedback/feedback.php">Feedback</a></li>
+      <li><a href="../anotacoes=/Anotacoes.php">Anotacoes</a></li>
     </ul>
   </nav>
 
@@ -73,14 +74,14 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
     <h2>Login</h2>
     <form action = "" method = "POST">
       <div class="input-field">
-        <label for="username">Nick:</label>
+        <label for="username">Usuario:</label>
         <input type="text" id="nick" name="nick" required>
       </div>
       <div class="input-field">
         <label for="senha">Senha:</label>
         <input type="senha" id="senha" name="senha" required>
       </div>
-      <button class="btn-login" type="submit">Entrar </button>
+      <button class="btn-login" type="submit">Entrar</button>
     </form>
   </section>
 </body>

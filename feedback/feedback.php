@@ -17,9 +17,11 @@
       <a href="feedback.html" >feedback</a>
     </div>
     <ul class="nav-links">
-      <li><a href="../Login/login.php">Login</a></li>
+    <li><a href="../Login/login.php">Login</a></li>
       <li><a href="../home.php">Home</a></li>
       <li><a href="../feedback/feedback.php">Feedback</a></li>
+      <li><a href="../anotacoes=/Anotacoes.php">Anotacoes</a></li>
+    </ul>
     </ul>
   </nav>
 

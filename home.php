@@ -71,7 +71,7 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
   <section class="login">
     <h2>Diario</h2>
     <form action="" method="POST" style="width: 400px; height: 640px;padding: 0;">
-      <textarea name="nova_anotacao" id="" cols="30" rows="10" style="width: 640px; height: 640px;"></textarea>
+      <textarea class = 'textarea' name="nova_anotacao" id="" cols="30" rows="10" ></textarea>
       <button class="btn-login" type="submit">Salvar Anotação</button>
     </form>
     <div class="anotacoes">
