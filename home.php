@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nova_anotacao"])) {
   $anotacao = mysqli_real_escape_string($login, $anotacao);
 
   // Insere a nova anotação no banco de dados
-  $sql = "INSERT INTO Anotacoes (grenciamento, usuario_id, usuario_nick) VALUES ('$anotacao', 1, 'Pedro')";
+  $sql = "INSERT INTO Anotacoes (grenciamento, usuario_id, usuario_nick) VALUES ('$anotacao', '1', 'Pedro')";
   $resultado = mysqli_query($login, $sql);
 
   if ($resultado) {

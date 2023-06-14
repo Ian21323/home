@@ -1,3 +1,46 @@
+<?php
+// Conexão com o banco de dados
+$servername = "127.0.0.1:3306";
+$username = "root";
+$password = "123456";
+$dbname = "diariodigital";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexão
+if ($conn->connect_error) {
+    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+}
+
+// Verificar se o formulário de exclusão foi enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['usuario_id'])) {
+        $anotacaoId = $_POST['usuario_id'];
+
+        // Executar a consulta de exclusão no banco de dados
+        $sql = "INSERT FROM Feedback WHERE id = $anotacaoId";
+        $conn->query($sql);
+      }
+}
+
+// Consultar Feedback
+$sql = "SELECT idFeedback, feed FROM Feedback";
+$result = $conn->query($sql);
+
+// Verificar se há resultados e armazenar em um array
+$anotacoes = array();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $anotacoes[] = $row;
+    }
+}
+
+
+// Fechar conexão com o banco de dados
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <htmzl lang="pt-br">
 <head>
@@ -30,10 +73,11 @@
     <h2>Mandar mensagem para o Suporte</h2>
     <form>
     
-        <input type="password" id="password" name="password" required>
+        <textarea name="" id="" cols="30" rows="10" class = 'textarea'></textarea>
       </div>
       <button class="btn-login" type="submit">Enviar</button>
     </form>
   </section>
 </body>
 </html>
+
