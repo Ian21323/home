@@ -1,3 +1,5 @@
+
+
 <?php
 // Conexão com o banco de dados
 $servername = "127.0.0.1:3306";
